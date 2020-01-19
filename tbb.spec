@@ -10,7 +10,7 @@
 Summary: The Threading Building Blocks library abstracts low-level threading details
 Name: tbb
 Version: %{dotver}
-Release: 5.%{releasedate}%{?dist}
+Release: 9.%{releasedate}%{?dist}
 License: GPLv2 with exceptions
 Group: Development/Tools
 URL: http://threadingbuildingblocks.org/
@@ -32,7 +32,7 @@ Patch2: tbb-4.0-mfence.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 BuildRequires: libstdc++-devel
-ExclusiveArch: %{ix86} x86_64 ia64 ppc ppc64 %{arm}
+ExcludeArch: s390 s390x
 
 %description
 Threading Building Blocks (TBB) is a C++ runtime library that
@@ -125,6 +125,19 @@ rm -rf ${RPM_BUILD_ROOT}
 %doc doc/html
 
 %changelog
+* Sat Aug 16 2014 Petr Machata <pmachata@redhat.com> - 4.1-9.20130314
+- Add ExcludeArch: s390{,x}
+
+* Sat Aug 16 2014 Petr Machata <pmachata@redhat.com> - 4.1-8.20130314
+- Bump for rebuild
+
+* Fri Jul 25 2014 Petr Machata <pmachata@redhat.com> - 4.1-7.20130314
+- Bump for rebuild
+
+* Wed Jan 22 2014 Petr Machata <pmachata@redhat.com> - 4.1-6.20130314
+- Drop ExclusiveArch altogether. TBB has a fallback code that works
+  irrespective of the architecture.
+
 * Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.1-5.20130314
 - Mass rebuild 2013-12-27
 
