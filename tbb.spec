@@ -10,7 +10,7 @@
 Summary: The Threading Building Blocks library abstracts low-level threading details
 Name: tbb
 Version: %{dotver}
-Release: 4.%{releasedate}%{?dist}
+Release: 5.%{releasedate}%{?dist}
 License: GPLv2 with exceptions
 Group: Development/Tools
 URL: http://threadingbuildingblocks.org/
@@ -125,6 +125,9 @@ rm -rf ${RPM_BUILD_ROOT}
 %doc doc/html
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 4.1-5.20130314
+- Mass rebuild 2013-12-27
+
 * Thu Oct  3 2013 Petr Machata <pmachata@redhat.com> - 4.1-4.20130314
 - Fix %%install to also install include files that are not named *.h
 
